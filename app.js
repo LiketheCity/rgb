@@ -28,6 +28,11 @@ function init(){
 	reset();
 }
 
+/* 
+	The function init records and displays the user's score.
+
+*/
+
 function setupModeButtons(){
 	for(var i = 0; i < modeButtons.length; i++){
 		modeButtons[i].addEventListener("click", function(){
@@ -39,6 +44,12 @@ function setupModeButtons(){
 		});
 	}
 }
+
+/* 
+	The function setupModeButtons is where the program selects and displays
+	the difficulty of the game.
+
+*/
 
 function setupSquares(){
 	for(var i = 0; i < squares.length; i++){
@@ -71,6 +82,13 @@ function setupSquares(){
 	}
 }
 
+/* 
+	The function setupSquares makes it so the program is able
+	to check if the user clicked on the correct color and to respond
+	to a correct or wrong answer.
+
+*/
+
 
 async function updateColorName(){
 	const regex = /\([^\)]+\)/g; 
@@ -91,6 +109,12 @@ async function updateColorName(){
 		colorDisplay.textContent = colorData.name.value + "-ish"; 
 	}
 }
+
+/* 
+	The function updateColorName finds the name of the color
+	it chose and then adds the "-ish" suffix to that name.
+
+*/
 
 function reset(){
 	resetPressed = true;
@@ -113,6 +137,12 @@ function reset(){
 	h1.style.background = "steelblue";
 }
 
+/* 
+	The function reset makes the program color in
+	the 3 or 6 squares.
+
+*/
+
 resetButton.addEventListener("click", function(){
 	reset();
 })
@@ -125,10 +155,23 @@ function changeColors(color){
 	}
 }
 
+/* 
+	The function changeColors will go through
+	all the squares and change each one to
+	a different color.
+
+*/
+
 function pickColor(){
 	var random = Math.floor(Math.random() * colors.length);
 	return colors[random];
 }
+
+/* 
+	The function pickColor chooses a random number
+	which will be used to pick a corresponding color.
+
+*/
 
 function generateRandomColors(num){
 	//make an array
@@ -142,6 +185,12 @@ function generateRandomColors(num){
 	return arr;
 }
 
+/* 
+	The function generateRandomColors makes
+	an array of randomly selected colors.
+
+*/
+
 function randomColor(){
 	//pick a "red" from 0 - 255
 	var r = Math.floor(Math.random() * 256);
@@ -151,3 +200,9 @@ function randomColor(){
 	var b = Math.floor(Math.random() * 256);
 	return "rgb(" + r + ", " + g + ", " + b + ")";
 }
+
+/* 
+	The function randomColor selects how much red, green, and blue
+	are used in one color and then select that color.
+
+*/
